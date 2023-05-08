@@ -153,4 +153,22 @@ public class RadioTest {
         int expected = 0;
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    public void stationCountsTest() {
+        Radio radio = new Radio(15);
+        radio.setCurrentStation(12);
+
+        int actual = radio.getCurrentStation();
+        int expected = 12;
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void stationCountsNextTest() {
+        Radio radio = new Radio(15);
+        radio.setCurrentStation(12);
+        radio.next();
+        int actual = radio.getCurrentStation();
+        int expected = 13;
+        Assertions.assertEquals(expected, actual);
+    }
 }
